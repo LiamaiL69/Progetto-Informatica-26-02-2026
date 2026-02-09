@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Bet271 - ChanceLab</title>
+    <title>Bet271</title>
     <link rel="stylesheet" href="css/index-style.css">
 </head>
 <body>
@@ -70,7 +70,7 @@
 
         <!-- Bottone -->
         <div class="play">
-            <a href="tempag.php">Gioca ora</a>
+            <a href="slots.php">Gioca ora</a>
         </div>
 
     </main>
