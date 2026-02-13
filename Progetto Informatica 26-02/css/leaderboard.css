@@ -1,0 +1,46 @@
+:root {
+    --accent: #00ff88;
+    --bg-card: #1a1a22;
+    --text-light: #ffffff;
+    --text-muted: #9ca3af;
+}
+
+.leaderboard-header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    font-size: 14px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.leaderboard-table th {
+    background: #22222b;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.leaderboard-table tr:nth-child(even) {
+    background: #1f1f29;
+}
+
+.leaderboard-table tr:hover {
+    background: #2a2a35;
+}
+
+.leaderboard-table td {
+    color: var(--text-light);
+}

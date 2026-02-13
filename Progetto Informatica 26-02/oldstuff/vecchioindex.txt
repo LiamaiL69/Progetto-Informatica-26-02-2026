@@ -1,0 +1,115 @@
+<?php
+session_start();
+
+$isLogged = isset($_SESSION['user_id']);
+$username = $_SESSION['username'] ?? '';
+$balance = $_SESSION['saldo'] ?? 0;
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BET271</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo"><a href="home.php">BET271</a></div>
+
+    <div class="header-right">
+        <?php if(!$isLogged): ?>
+            <a href="auth/login.php" class="btn">Login</a>
+            <a href="auth/register.php" class="btn accent">Sign Up</a>
+        <?php else: ?>
+            <div class="saldo-box">
+                💰 <?php echo number_format($balance, 2); ?> Credits
+            </div>
+            <span class="welcome">
+                👋 <?php echo htmlspecialchars($username); ?>
+            </span>
+            <a href="auth/logout.php" class="btn">Logout</a>
+        <?php endif; ?>
+    </div>
+</header>
+
+<nav>
+    <a href="subpages/customization.php" >Customization</a>
+    <a href="subpages/daily-spin.php" >Daily Spin</a>
+    <a href="subpages/achievements.php" >Achievements</a>
+    <a href="subpages/statistics.php" >Statistics</a>
+    <a href="subpages/leaderboard.php" >Leaderboard</a>
+</nav>
+
+<section class="hero">
+
+<?php if(!$isLogged): ?>
+
+    <div class="hero-content">
+        <h1>Play. Win. Dominate.</h1>
+        <p>Experience premium casino-style gameplay.</p>
+        <a href="auth/register.php" class="hero-btn">Start Now</a>
+    </div>
+
+<?php else: ?>
+
+    <div class="hero-logged">
+        <h1>BET271</h1>
+        <p>Welcome back, <?php echo htmlspecialchars($username); ?> 👋</p>
+    </div>
+
+<?php endif; ?>
+
+</section>
+
+<section class="section">
+    <h2>Popular Games</h2>
+
+    <div class="games-grid">
+
+        <div class="game-card">
+            <h3>Egyptian Slot</h3>
+            <p>Classic 3x3 reels with bonus features.</p>
+        </div>
+
+        <div class="game-card">
+            <h3>Blackjack</h3>
+            <p>Beat the dealer and reach 21.</p>
+        </div>
+
+        <div class="game-card">
+            <h3>Roulette</h3>
+            <p>Bet on red, black or your lucky number.</p>
+        </div>
+
+    </div>
+
+    <div class="promo">
+        <h2>Welcome Bonus</h2>
+        <p>Create an account and start your journey.</p>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <strong>BET271</strong><br>
+            © 2026 All rights reserved
+        </div>
+
+        <div>
+            <a href="#">Terms & Conditions</a><br>
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div>
+            Support: support@bet271.com
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
